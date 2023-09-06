@@ -5,14 +5,14 @@ public class User {
     private String name;
     private String lastName;
     private int age;
-    private Boolean isOnline;
+    private Boolean online;
 
     public User(String id, String name, String lastName, int age, Boolean isOnline) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
-        this.isOnline = isOnline;
+        this.online = isOnline;
     }
 
     public User() {
@@ -34,8 +34,8 @@ public class User {
         return age;
     }
 
-    public Boolean getIsOnline() {
-        return isOnline;
+    public Boolean getOnline() {
+        return online;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", isOnline=" + isOnline +
+                ", isOnline=" + online +
                 '}';
     }
 }

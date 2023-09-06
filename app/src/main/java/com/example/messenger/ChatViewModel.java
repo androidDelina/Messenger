@@ -86,7 +86,7 @@ public class ChatViewModel extends ViewModel {
     }
 
     public void setUserOnline(Boolean isOnline) {
-        referenceUsers.child(currentUserId).child("online"). setValue(isOnline);
+        referenceUsers.child(currentUserId).child("online").setValue(isOnline);
     }
 
     public void sendMessage(Message message) {

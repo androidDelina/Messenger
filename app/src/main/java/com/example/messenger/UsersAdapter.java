@@ -51,23 +51,14 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHol
                 user.getAge();
 
         holder.textViewUserInfo.setText(userInfo);
-        int colorBackCircle;
-//        Log.e("UsersAdapter", user.toString());
-//        Log.e("UsersAdapter", user.getIsOnline().toString());
-//        Log.e("UsersAdapter", usersList.toString() + " USERSLIST");
-//        if (user.getIsOnline() != null) {
-//            if (user.getIsOnline())
-//                colorBackCircle = R.drawable.circle_green;
-//            else
-//                colorBackCircle = R.drawable.circle_red;
-//        }
 
-        if (user.getIsOnline())
+        int colorBackCircle;
+
+        if (user.getOnline())
             colorBackCircle = R.drawable.circle_green;
         else
             colorBackCircle = R.drawable.circle_red;
 
-//        colorBackCircle = R.drawable.circle_red;
         Drawable background = ContextCompat.getDrawable(holder.itemView.getContext(), colorBackCircle);
         holder.view_circle.setBackground(background);
 

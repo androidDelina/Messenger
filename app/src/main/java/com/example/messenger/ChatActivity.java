@@ -1,6 +1,7 @@
 package com.example.messenger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -129,6 +131,16 @@ public class ChatActivity extends AppCompatActivity {
 
                     textViewTitle.setText(userInfo);
                 }
+
+                int colorBackCircle;
+
+                if (otherUser.getOnline())
+                    colorBackCircle = R.drawable.circle_green;
+                else
+                    colorBackCircle = R.drawable.circle_red;
+
+                Drawable background = ContextCompat.getDrawable(ChatActivity.this, colorBackCircle);
+                onlineStatus.setBackground(background);
             }
         });
     }

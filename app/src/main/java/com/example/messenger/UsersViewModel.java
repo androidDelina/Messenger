@@ -89,7 +89,7 @@ public class UsersViewModel extends ViewModel {
         return users;
     }
 
-    public void logOut() {
+    public void logOut() {setUserOnline(false);
         auth.signOut();
     }
 
@@ -98,6 +98,11 @@ public class UsersViewModel extends ViewModel {
         if (firebaseUser == null) {
             return;
         }
-        userReference.child(firebaseUser.getUid()).child("online"). setValue(isOnline);
+        userReference.child(firebaseUser.getUid()).child("online").setValue(isOnline);
     }
+
+//    public void setUserOnline(Boolean isOnline) {
+//        referenceUsers.child(currentUserId).child("online").setValue(isOnline);
+//    }
+
 }
